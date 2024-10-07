@@ -1,5 +1,8 @@
 import { Command } from "commander";
 import { readFileSync } from 'node:fs';
+import readlineSync from 'readline-sync';
+
+
 
 const program = new Command();
 program
@@ -16,7 +19,8 @@ program
   console.log(`Thank-you ${title}${name}`);
 });
   program.parse();
-
+  const filepath1 = readlineSync.question(`specify the path to the file 1`);
+  const filepath2 = readlineSync.question(`specify the path to the file 2`);
   const genDiff = (filepath1, filepath2) => {
     const filepath1 = fs.readFileSync(filepath1);
     const filepath2 = fs.readFileSync(filepath2);
