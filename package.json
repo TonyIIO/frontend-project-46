@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/TonyIIO/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/TonyIIO/frontend-project-46/actions)\r c",
-  "main": "index.js",
+  "main": "gendiff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "node": "^20.18.0"
   }
 }
