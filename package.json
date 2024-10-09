@@ -9,9 +9,12 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+  "bin": {
+    "gendiff": "./gendiff.js"
+  },
   "dependencies": {
     "commander": "^12.1.0",
-    "node": "^20.18.0",
+    "lodash": "^4.17.21",
     "readline-sync": "^1.4.10"
   }
 }
