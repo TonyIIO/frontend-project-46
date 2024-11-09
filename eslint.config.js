@@ -1,4 +1,5 @@
-import globals from "globals";
+import globals from 'globals';
+
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
@@ -19,7 +20,6 @@ export default [
       globals: {
         ...globals.node,
         ...globals.jest,
-        ...globals.browser,
       },
       parserOptions: {
         // Eslint doesn't supply ecmaVersion in `parser.js` `context.parserOptions`
@@ -28,7 +28,6 @@ export default [
         sourceType: 'module',
       },
     },
-    ...pluginJs.configs.recommended,
     plugins: { import: importPlugin },
     rules: {
       ...importPlugin.configs.recommended.rules,
