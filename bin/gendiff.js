@@ -12,5 +12,6 @@ program
   .action((filepath1, filepath2) => {
     console.log(genDiff(filepath1, filepath2));
   });
+// Формат данных определяйте на основе расширения файла
 
 program.parse();
