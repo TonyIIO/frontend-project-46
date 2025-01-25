@@ -5,6 +5,7 @@
   "main": "bin/gendiff.js",
   "scripts": {
     "test": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "eslint ."
   },
   "author": "",

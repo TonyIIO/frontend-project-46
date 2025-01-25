@@ -41,3 +41,24 @@ test('yaml', () => {
     '+ verbose': true,
   });
 });
+
+// test.each([
+//   {
+//     file1: getFixturePath('file1.json'),
+//     file2: getFixturePath('file2.json'),
+//     outputFormat: 'stylish',
+//     expected: readFile('result1.txt'),
+//   },
+//   {
+//     file1: getFixturePath('file1.yaml'),
+//     file2: getFixturePath('file2.yaml'),
+//     outputFormat: 'stylish',
+//     expected: readFile('result1.txt'),
+//   },
+//   {
+//     file1: getFixturePath('file3.json'),
+//     file2: getFixturePath('file4.json'),
+//     outputFormat: 'stylish',
+//     expected: readFile('result2.txt'),
+//   }
+// ]);

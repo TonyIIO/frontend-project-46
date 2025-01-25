@@ -4,7 +4,7 @@ import stylish from './stylish.js';
 function formater(object, formatType) {
   switch (formatType) {
     case 'json':
-      return JSON.stringify(object); // доработать, вывод в одну строку идет
+      return JSON.stringify(object, null, 2);
     case 'plain':
       return plain(object);
     case 'stylish':
