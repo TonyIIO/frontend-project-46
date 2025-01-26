@@ -1,13 +1,15 @@
-import { fileURLToPath } from 'url';
+// import { fileURLToPath } from 'url';
 import path from 'path';
 import parser from './parsers.js';
 import differences from './differences.js';
 import formater from './formatters/index.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+// const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+
+const getFixturePath = (filepath) => path.resolve(process.cwd(), '__fixtures__', filepath);
 
 const getPatch = (filepath1, filepath2, fileType = 'stylish') => {
   const obj1 = parser(getFixturePath(filepath1));
