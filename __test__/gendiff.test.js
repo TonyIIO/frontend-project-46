@@ -8,6 +8,7 @@ test.each([
   ['output yaml in stylish mode with nesting', 'file3.yaml', 'file4.yaml', 'result1.txt', undefined],
   ['output json in plain mode with nesting', 'file3.json', 'file4.json', 'result2.txt', 'plain'],
   ['output yaml in plain mode with nesting', 'file3.yaml', 'file4.yaml', 'result2.txt', 'plain'],
+  ['output yaml in plain mode with nesting', 'file3.yml', 'file4.yml', 'result2.txt', 'plain'],
   ['output json in json mode with nesting', 'file3.json', 'file4.json', 'result3.txt', 'json'],
   ['output yaml in json mode with nesting', 'file3.yaml', 'file4.yaml', 'result3.txt', 'json'],
   ['incorrect file format and wrong file path', 'fileNoExist.json', 'result1s.txt', null, undefined],
