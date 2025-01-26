@@ -4,39 +4,20 @@ install:
 node:
 	bin/gendiff.js
 
-publish:
-	npm publish --dry-run
+test:
+	npm run test
+
+test-coverage:
+	npm run test:coverage
 
 lint:
-	npx eslint
+	npm run lint
 
-# щаблон
-# npm run lint
-# npm run test
-# npm run test:coverage
-
-# install: deps-install
-# 	npx simple-git-hooks
-
-# run:
-# 	bin/nodejs-package.js 10
+publish:
+	npm publish --dry-run
 
 # deps-install:
 # 	npm ci --legacy-peer-deps
 
 # deps-update:
 # 	npx ncu -u
-
-# test:
-# 	npm test
-
-# test-coverage:
-# 	npm test -- --coverage --coverageProvider=v8
-
-# lint:
-# 	npx eslint .
-
-# publish:
-# 	npm publish
-
-# .PHONY: test
