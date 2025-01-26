@@ -1,4 +1,5 @@
 import fs from 'fs';
+import path from 'path';
 
 const readFile = (filename) => {
   try {
@@ -9,4 +10,6 @@ const readFile = (filename) => {
   }
 };
 
-export default readFile;
+const getFixturePath = (filepath) => path.resolve(process.cwd(), '__fixtures__', filepath);
+
+export { readFile, getFixturePath };
