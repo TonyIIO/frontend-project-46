@@ -11,6 +11,10 @@ lint:
 	npx eslint
 
 # щаблон
+# npm run lint
+# npm run test
+# npm run test:coverage
+
 # install: deps-install
 # 	npx simple-git-hooks
 
