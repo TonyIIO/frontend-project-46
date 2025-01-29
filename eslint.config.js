@@ -31,6 +31,7 @@ export default [
     plugins: { import: importPlugin },
     rules: {
       ...importPlugin.configs.recommended.rules,
+      'linebreak-style': ['error', 'unix'],
     },
   },
   ...compat.extends('airbnb-base'),

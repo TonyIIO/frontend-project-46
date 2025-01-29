@@ -13,6 +13,7 @@ test-coverage:
 
 lint:
 	npm run lint
+	npx run lint --fix
 
 publish:
 	npm publish --dry-run
