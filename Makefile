@@ -1,8 +1,9 @@
 install:
 	npm ci
+	npm install -g jest
 
-node:
-	bin/gendiff.js
+gendiff:
+	gendiff -h
 
 test:
 	npm run test
@@ -15,9 +16,3 @@ lint:
 
 publish:
 	npm publish --dry-run
-
-# deps-install:
-# 	npm ci --legacy-peer-deps
-
-# deps-update:
-# 	npx ncu -u
