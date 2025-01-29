@@ -7,28 +7,28 @@
 
 
 ### Description
-This is the second educational project at Hexlet. 
-It's called the Difference Calculator. This program can compare two files in .json (or .yml/.yaml) format. 
-It can also output the comparison result in different formats such as 'stylish', 'plain', and 'json'.
+This is the second educational project at Hexlet.\
+It's called the Difference Calculator. This program can compare two files in .json (or .yml/.yaml) format.\
+It can also output the comparison result in different formats such as 'stylish', 'plain', and 'json'.\
 
 ### Requirements
 
-version Node.js - v22.12.0;
+version Node.js - v22.12.0;\
 version NPM - 11.0.0.
 
 ### Instrictions:
 
-1. clone the repository:
-```git clone git@github.com:TonyIIO/frontend-project-46.git```
-2. go to the root directory of the project:
+1. clone the repository:\
+```git clone git@github.com:TonyIIO/frontend-project-46.git```\
+2. go to the root directory of the project:\
 ```cd frontend-project-46```
-3. install make package:
-```sudo apt install make```
-4. installing dependencies
-```make install```
-5. example
-```make gendiff```
-p.s. gendiff -f plain file1.json file2.json
+3. install make package:\
+```sudo apt install make```\
+4. installing dependencies\
+```make install```\
+5. example\
+```make gendiff```\
+p.s. gendiff -f plain file1.json file2.json\
 
 asciinema:
 ### Creating differences between two flat .JSON files
