@@ -14,8 +14,8 @@ const inFormat = ['json', 'yml'];
 
 describe('testing gendiff', () => {
   test.each(inFormat)('testing gendiff with format', (format) => {
-    const filePath1 = `file1.${format}`;
-    const filePath2 = `file2.${format}`;
+    const filePath1 = getFixturePath(`file1.${format}`);
+    const filePath2 = getFixturePath(`file2.${format}`);
     expect(gendiff(filePath1, filePath2)).toBe(readFile('result1.txt'));
     expect(gendiff(filePath1, filePath2, 'stylish')).toBe(readFile('result1.txt'));
     expect(gendiff(filePath1, filePath2, 'plain')).toBe(readFile('result2.txt'));
