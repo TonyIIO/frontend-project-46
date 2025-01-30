@@ -8,7 +8,7 @@
     "test:coverage": "jest --coverage",
     "lint": "eslint ."
   },
-  "author": "",
+  "author": "Anton Polyakovskiy",
   "license": "ISC",
   "type": "module",
   "bin": {

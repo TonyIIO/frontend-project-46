@@ -1,12 +1,16 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import parser from './parsers.js';
 import differences from './differences.js';
 import formater from './formatters/index.js';
 
-const getFixturePath = (filepath) => path.resolve(process.cwd(), '..', '__fixtures__', filepath);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const readFile = (filepath) => parser(fs.readFileSync(getFixturePath(filepath), ('utf-8')), filepath);
+const getFixturePath = (filepath) => path.join(__dirname, '..', '__fixtures__', filepath);
+
+const readFile = (filepath) => parser(fs.readFileSync(getFixturePath(filepath), 'utf-8'), filepath);
 
 const gendiff = (filepath1, filepath2, fileType = 'stylish') => {
   const obj1 = readFile(filepath1);
