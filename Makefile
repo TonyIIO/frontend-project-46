@@ -7,7 +7,7 @@ gendiff:
 
 test:
 	npx jest
-# npm run test
+# npm run test  --watch
 
 test-coverage:
 	npx jest --coverage
