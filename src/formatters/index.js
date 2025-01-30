@@ -1,14 +1,14 @@
 import plain from './plain.js';
 import stylish from './stylish.js';
 
-function formater(object, formatType) {
+function formater(dataDiff, formatType) {
   switch (formatType) {
     case 'json':
-      return JSON.stringify(object, null, 2);
+      return JSON.stringify(dataDiff, null, 2);
     case 'plain':
-      return plain(object);
+      return plain(dataDiff);
     case 'stylish':
-      return stylish(object);
+      return stylish(dataDiff);
     default:
       console.log('Error: this format is not supported.');
       return null;

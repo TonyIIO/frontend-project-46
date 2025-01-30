@@ -39,29 +39,3 @@ const plain = (object, path = '') => {
 };
 
 export default plain;
-
-// const plain = (object, path = '') => {
-//   let result = '';
-//   const keys = _.uniq(_.keys(object).map((key) => key.replace(/^[-+]\s/, '')));
-//   keys.forEach((key) => {
-//     const currentPath = buildPath(path, key);
-//     const addedKey = `+ ${key}`;
-//     const removedKey = `- ${key}`;
-//     const hasAdded = _.has(object, addedKey);
-//     const hasRemoved = _.has(object, removedKey);
-
-//     if (hasAdded && hasRemoved) {
-//       result += `Property '${currentPath}' was updated.
-//        From ${formatValue(object[removedKey])} to ${formatValue(object[addedKey])}\n`;
-//     } else if (hasAdded) {
-//       result += `Property '${currentPath}'
-//        was added with value: ${formatValue(object[addedKey])}\n`;
-//     } else if (hasRemoved) {
-//       result += `Property '${currentPath}' was removed\n`;
-//     } else if (_.isPlainObject(object[key])) {
-//       result += plain(object[key], currentPath);
-//     }
-//   });
-
-//   return result;
-// };
