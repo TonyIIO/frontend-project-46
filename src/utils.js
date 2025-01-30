@@ -14,6 +14,6 @@ const readFile = (filename) => {
   }
 };
 
-const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const getFixturePath = (filename) => path.join(__dirname, '..', filename);
 
 export { readFile, getFixturePath };
