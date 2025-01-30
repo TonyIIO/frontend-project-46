@@ -3,21 +3,28 @@ import { Command } from 'commander';
 import gendiff from '../src/index.js';
 
 const program = new Command();
+
 program
-  .usage('[options] <filepath1> <filepath2>')
-  .version('0.0.1', '-V, --version', 'output the version number')
-  .option('-f, --format [type]', 'output format', 'stylish', 'plain', 'json')
+  .name('gendiff')
+  .helpOption('-h, --help', 'output usage information')
   .description('Compares two configuration files and shows a difference.')
+  .version('1.0.0')
   .arguments('<filepath1> <filepath2>')
+  .option('-f, --format [type]', 'output format', 'stylish', 'plain', 'json')
   .action((filepath1, filepath2) => {
     const options = program.opts();
     console.log(gendiff(filepath1, filepath2, options.format));
   });
-
 program.parse(process.argv);
-//   .action((filepath1, filepath2, options) => {
-//     const fileType = options.format;
-//     console.log(gendiff(filepath1, filepath2, fileType));
+// program
+//   .usage('[options] <filepath1> <filepath2>')
+//   .version('0.0.1', '-V, --version', 'output the version number')
+//   .option('-f, --format [type]', 'output format', 'stylish', 'plain', 'json')
+//   .description('Compares two configuration files and shows a difference.')
+//   .arguments('<filepath1> <filepath2>')
+//   .action((filepath1, filepath2) => {
+//     const options = program.opts();
+//     console.log(gendiff(filepath1, filepath2, options.format));
 //   });
 
-// program.parse();
+// program.parse(process.argv);

@@ -4,9 +4,9 @@ import parser from './parsers.js';
 import differences from './differences.js';
 import formater from './formatters/index.js';
 
-const getFixturePath = (filename) => path.resolve(process.cwd(), '__fixtures__', filename);
+const getFixturePath = (filepath) => path.resolve(process.cwd(), '..', '__fixtures__', filepath);
 
-const readFile = (filename) => parser(fs.readFileSync(getFixturePath(filename), ('utf-8')), filename);
+const readFile = (filepath) => parser(fs.readFileSync(getFixturePath(filepath), ('utf-8')), filepath);
 
 const gendiff = (filepath1, filepath2, fileType = 'stylish') => {
   const obj1 = readFile(filepath1);
