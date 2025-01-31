@@ -4,19 +4,14 @@ install:
 gendiff:
 	gendiff -h
 
-test:
-	npx jest --watch
-
-test-coverage:
-	npx jest --coverage
+publish:
+	npm publish --dry-run
 
 lint:
 	npx eslint .
 
-publish:
-	npm publish --dry-run
+test:
+	npm test
 
-# npm install -g jest
-# npm run lint
-# npm run test:coverage
-# npm run test  --watch
+test-coverage:
+	npm test -- --coverage --coverageProvider=v8
