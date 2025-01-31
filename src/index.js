@@ -22,4 +22,3 @@ const gendiff = (filepath1, filepath2, fileType = 'stylish') => {
 };
 
 export default gendiff;
-
