@@ -9,7 +9,7 @@ const getFullPath = (filepath) => (
     ? filepath
     : path.resolve(process.cwd(), filepath)
 );
-//
+
 const getData = (filepatch) => fs.readFileSync(filepatch, 'utf-8');
 
 const gendiff = (filepath1, filepath2, fileType = 'stylish') => {

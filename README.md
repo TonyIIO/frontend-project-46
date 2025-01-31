@@ -28,7 +28,7 @@ version NPM - 11.0.0.
 ```make install```
 5. example:\
 ```make gendiff```
-```gendiff -f plain file1.json file2.json```
+```gendiff -f plain __fixtures__/file1.json __fixtures__/file2.json```
 
 asciinema:
 ### Creating differences between two flat .JSON files
