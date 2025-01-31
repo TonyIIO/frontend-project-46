@@ -23,23 +23,3 @@ const gendiff = (filepath1, filepath2, fileType = 'stylish') => {
 
 export default gendiff;
 
-// import { fileURLToPath } from 'url';
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// const getFullPath = (filepath) => path.resolve(__dirname, '..', '__fixtures__', filepath);
-// const readFile = (filepath) => {
-//   const fullPath = getFixturePath(filepath);
-//   if (!fs.existsSync(fullPath)) {
-//     throw new Error(`File not found: ${fullPath}`);
-//   }
-//   return parser(fs.readFileSync(fullPath, 'utf-8'), filepath);
-// };
-// const readFile = (filepath) => {
-//   const absoluteFilePath = path.isAbsolute(filepath)
-//     ? filepath : path.resolve(process.cwd(), filepath);
-//   const data = fs.readFileSync(absoluteFilePath, 'utf-8');
-//   return parser(data, filepath);
-// };
-//   return parser(getData, filepath);
-
-// const getFullPath = (filepatch) => path.resolve(process.cwd(), filepatch);
