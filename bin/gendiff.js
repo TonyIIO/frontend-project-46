@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+
 import { Command } from 'commander';
+
 import gendiff from '../src/index.js';
 
 const program = new Command();
@@ -16,12 +18,3 @@ program
     console.log(gendiff(filepath1, filepath2, options.format));
   });
 program.parse(process.argv);
-
-program.exitOverride();
-
-try {
-  program.parse(process.argv);
-} catch (err) {
-  console.error(err.message);
-  process.exit(1);
-}

@@ -4,11 +4,7 @@ import parser from './parsers.js';
 import differences from './differences.js';
 import formater from './formatters/index.js';
 
-const getFullPath = (filepath) => (
-  path.isAbsolute(filepath)
-    ? filepath
-    : path.resolve(process.cwd(), filepath)
-);
+const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
 
 const getData = (filepatch) => fs.readFileSync(filepatch, 'utf-8');
 
