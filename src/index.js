@@ -4,7 +4,14 @@ import parser from './parsers.js';
 import differences from './differences.js';
 import formater from './formatters/index.js';
 
-const getFullPath = (filepath) => path.resolve(process.cwd(), filepath);
+const fixturesDir = '__fixtures__';
+
+const getFullPath = (filepath) => {
+  if (path.isAbsolute(filepath)) {
+    return filepath;
+  }
+  return path.resolve(process.cwd(), fixturesDir, filepath);
+};
 
 const getData = (filepath) => fs.readFileSync(filepath, 'utf-8');
 
