@@ -10,7 +10,7 @@ const formatValue = (value) => {
 const buildPath = (prefix, key) => (prefix ? `${prefix}.${key}` : key);
 
 const plain = (object, path = '') => {
-  const keys = _.uniq(_.keys(object).map((key) => key.replace(/^[-+]\s/, '')));
+  const keys = _.uniq(_.keys(object).map((key) => key.replace(/^[-+]\s/, ''))).sort();
 
   const resultString = keys.reduce((acc, key) => {
     const currentPath = buildPath(path, key);
@@ -29,13 +29,13 @@ const plain = (object, path = '') => {
       return `${acc}Property '${currentPath}' was removed\n`;
     }
     if (_.isPlainObject(object[key])) {
-      return `${acc}${plain(object[key], currentPath)}`;
+      return `${acc}${plain(object[key], currentPath)}\n`;
     }
 
     return acc;
   }, '');
 
-  return resultString;
+  return resultString.trim();
 };
 
 export default plain;
