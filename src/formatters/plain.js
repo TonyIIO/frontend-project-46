@@ -10,9 +10,10 @@ const formatValue = (value) => {
 const buildPath = (prefix, key) => (prefix ? `${prefix}.${key}` : key);
 
 const plain = (object, path = '') => {
-  const keys = _.uniq(_.keys(object).map((key) => key.replace(/^[-+]\s/, ''))).sort();
+  const keys = _.uniq(_.keys(object).map((key) => key.replace(/^[-+]\s/, '')));
+  const sortedKeys = _.orderBy(keys, [(key) => key]);
 
-  const resultString = keys.reduce((acc, key) => {
+  const resultString = sortedKeys.reduce((acc, key) => {
     const currentPath = buildPath(path, key);
     const addedKey = `+ ${key}`;
     const removedKey = `- ${key}`;

@@ -7,20 +7,23 @@ const differences = (obj1, obj2) => {
     const value1 = obj1[key];
     const value2 = obj2[key];
 
-    if (_.isObject(value1) && _.isObject(value2)) {
-      acc[key] = differences(value1, value2);
-    } else if (value2 === undefined) {
-      acc[`- ${key}`] = value1;
-    } else if (value1 === undefined) {
-      acc[`+ ${key}`] = value2;
-    } else if (value1 !== value2) {
-      acc[`- ${key}`] = value1;
-      acc[`+ ${key}`] = value2;
-    } else {
-      acc[key] = value1;
-    }
+    const updates = (() => {
+      if (_.isObject(value1) && _.isObject(value2)) {
+        return { [key]: differences(value1, value2) };
+      }
+      if (value2 === undefined) {
+        return { [`- ${key}`]: value1 };
+      }
+      if (value1 === undefined) {
+        return { [`+ ${key}`]: value2 };
+      }
+      if (value1 !== value2) {
+        return { [`- ${key}`]: value1, [`+ ${key}`]: value2 };
+      }
+      return { [key]: value1 };
+    })();
 
-    return acc;
+    return { ...acc, ...updates };
   }, {});
 };
 

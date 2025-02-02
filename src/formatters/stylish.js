@@ -9,8 +9,8 @@ const getBracketIndent = (depth) => replacer.repeat((depth - 1) * spacesCount);
 const stylish = (data, depth = 1) => {
   const lines = Object.entries(data).flatMap(([key, value]) => {
     const indent = getIndent(depth);
-    let sign = '  ';
     let actualKey = key;
+    let sign = '  ';
 
     if (key.startsWith('- ')) {
       sign = '- ';
