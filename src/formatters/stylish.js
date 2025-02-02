@@ -9,16 +9,11 @@ const getBracketIndent = (depth) => replacer.repeat((depth - 1) * spacesCount);
 const stylish = (data, depth = 1) => {
   const lines = Object.entries(data).flatMap(([key, value]) => {
     const indent = getIndent(depth);
-    let actualKey = key;
-    let sign = '  ';
-
-    if (key.startsWith('- ')) {
-      sign = '- ';
-      actualKey = key.slice(2);
-    } else if (key.startsWith('+ ')) {
-      sign = '+ ';
-      actualKey = key.slice(2);
-    }
+    const { actualKey, sign } = (() => {
+      if (key.startsWith('- ')) return { actualKey: key.slice(2), sign: '- ' };
+      if (key.startsWith('+ ')) return { actualKey: key.slice(2), sign: '+ ' };
+      return { actualKey: key, sign: '  ' };
+    })();
 
     if (_.isPlainObject(value)) {
       const formattedValue = stylish(value, depth + 1);
